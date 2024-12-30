@@ -1,10 +1,10 @@
 <template>
-    <div class="flex h-[90vh] bg-darkblue px-4 py-6">
+    <div class="flex h-[90vh] bg-darkblue px-4 py-6 animate-slideright  ">
         <div class="flex flex-col items-center justify-between" @click="toogleBar">
             <div class="flex flex-col">
                 <MiniServerIcon />
                 <div class="w-4/5 bg-hovergray h-1 mt-2"></div>
-                <div class="flex flex-col mt-2 gap-3">                
+                <div class="flex flex-col mt-2 gap-3">                   
                     <MiniServerIcon />
                     <MiniServerIcon />
                     <MiniServerIcon />
@@ -15,8 +15,6 @@
             <MiniServerIcon @click="toogleModalCreateServer"/>
         </div>
         
-        <!-- Adicionando animação com transições -->
-        <transition name="slide">
             <div 
                 v-if="isOpen" 
                 class="flex flex-col ml-8 text-white min-w-48"
@@ -25,7 +23,6 @@
                     <HomeSideBarContent />
                 </div>
             </div>
-        </transition>
     </div>
     <createServer @close="toogleModalCreateServer" v-if="ModalCreateServer" />
 </template>
@@ -53,7 +50,7 @@ import HomeSideBarContent from "./home/homeSideBarContent.vue";
             }
         },
         components : {
-            MiniServerIcon,
+            MiniServerIcon,     
             createServer,
             HomeSideBarContent
         }

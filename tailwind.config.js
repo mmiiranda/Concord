@@ -14,6 +14,10 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      slideright: 'slideright ease-in .2s ',
+      slideleft: 'slideleft ease-in .2s ',
+      slideup: 'slideup ease-in .2s ',
+      slidedown: 'slidedown ease-in .2s ',
     },
     aria: {
       busy: 'busy="true"',
@@ -597,6 +601,46 @@ module.exports = {
         '50%': {
           transform: 'none',
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+        },
+      },
+      slideright:{
+        '0%':{
+          transform: 'translateX(-100%)',
+          opacity: "0"
+        },
+        '100%':{
+          transform: 'translateX(0)',
+          opacity: "1"
+        },
+      },
+      slideleft:{
+        '0%':{
+          transform: 'translateX(100%)',
+          opacity: "0"
+        },
+        '100%':{
+          transform: 'translateX(0)',
+          opacity: "1"
+        },
+      },
+      slideup:{
+        '0%':{
+          transform: 'translateY(100%)',
+          opacity: "0"
+        },
+        '100%':{
+          transform: 'translateY(0)',
+          opacity: "1"
+        },
+      },
+      slidedown:{
+        '0%':{
+          transform: 'translateY(-100%)',
+          opacity: "0"
+        },
+        '100%':{
+          transform: 'translateY(0)',
+          opacity: "1"
         },
       },
     },

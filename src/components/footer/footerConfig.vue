@@ -1,7 +1,7 @@
 <template>
     <div 
     :class="[
-      'fixed bg-darkblue text-white w-full flex h-screen',
+      'fixed bg-darkblue text-white w-full flex h-screen ',
       isPageOptionOpen ? 'mt-0' : 'mt-[90vh]'
     ]">
         <headerFooter 
@@ -13,7 +13,7 @@
 <script>
 import headerFooter from "./headerFooter.vue"
 
-    export default {
+    export default {    
         name: "footerConfig",
         data(){
             return {
