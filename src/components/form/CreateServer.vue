@@ -1,7 +1,7 @@
 <template>
     <ModalOverlay>
-        <div class="flex flex-col bg-darkblue text-white py-4 px-5 rounded shadow">
-            <h2 class="text-white font-bold text-2xl">Criar Servidor</h2>
+        <div class="max-w-2/5 w-auto  lg:min-w-96 flex flex-col gap-2 bg-darkblue text-white py-6 lg:px-8 px-4 rounded-xl shadow">
+            <h2 class="text-white font-bold text-3xl">Criar Servidor</h2>
             <form @submit.prevent="createServer" class="flex flex-col gap-5 mt-4 items-center">
                 
                 <fileAlt 
@@ -90,7 +90,7 @@ export default {
             console.log("Dono (ownerId):", ownerId);
 
             if (!this.serverName || !this.imageTempPath) {
-                console.error("Erro: Nome do servidor ou imagem não informados.");
+                this.$toast("Erro: Nome do servidor ou imagem não informados", "error");
                 return;
             }
 
@@ -117,6 +117,7 @@ export default {
                 }
 
                 const data = await response.json();
+                this.$toast("Servidor criado com sucesso", "sucess")
                 console.log("Servidor criado com sucesso:", data);
 
                 this.$emit("serverCreated");

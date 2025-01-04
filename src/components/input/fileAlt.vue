@@ -10,7 +10,7 @@
       >
       <label 
          :for="name" 
-         class="bg-hovergray grid place-content-center rounded-full w-16 h-16 shadow-lg cursor-pointer"
+         class="bg-hovergray overflow-hidden grid place-items-center rounded-full w-16 h-16 shadow-lg cursor-pointer"
       >
          <img 
             :src="previewImage || defaultIcon" 
